@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 # Claude Code local settings
 .claude/settings.local.json
+# Hasil generate (dibuat ulang saat build, lihat scripts/generate-sitemap.mjs)
+public/sitemap.xml

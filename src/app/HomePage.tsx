@@ -1,9 +1,9 @@
-import { Hero } from "../features/beranda/Hero";
-import { TentangSection } from "../features/tentang/TentangSection";
+import { Hero } from "../features/beranda";
+import { TentangSection } from "../features/tentang";
 import { ProyekSection } from "../features/proyek";
 import { BerjalanSection } from "../features/berjalan";
-import { KerjasamaSection } from "../features/kerjasama/KerjasamaSection";
-import { KontakSection } from "../features/kontak/KontakSection";
+import { KerjasamaSection } from "../features/kerjasama";
+import { KontakSection } from "../features/kontak";
 
 export function HomePage() {
   return (

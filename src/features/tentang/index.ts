@@ -1,0 +1,1 @@
+export { TentangSection } from "./TentangSection";

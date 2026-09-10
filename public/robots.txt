@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mirulhg.github.io/react-portofolio-app/sitemap.xml

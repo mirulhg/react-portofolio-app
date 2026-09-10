@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# Portofolio Interaktif
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Situs portofolio personal satu-halaman yang menampilkan identitas, keahlian, dan hasil
+kerja kepada calon klien — dengan tambahan proyek yang **sedang berjalan** beserta
+kemajuannya, dan penjelasan terbuka soal cara kerja sama, sehingga calon klien bisa
+menilai kapasitas dan kecocokan sebelum menghubungi.
 
-Currently, two official plugins are available:
+Dibangun dengan React + TypeScript + Vite + Tailwind CSS, mengikuti kontrak kerja
+teknis dan spek desain di folder [`Docs/`](./Docs).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Struktur
 
-## React Compiler
+- `src/app/` — entry point, layout (header/footer/navigasi), halaman.
+- `src/features/` — satu folder per bagian situs (beranda, tentang, proyek, berjalan,
+  kerjasama, kontak). Tiap fitur hanya diakses lewat `index.ts`-nya sendiri.
+- `src/shared/` — hook, util, dan komponen UI yang dipakai lintas fitur.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Aturan struktur dan kualitas kode yang mengikat ada di
+[`Docs/CLAUDE.md`](./Docs/CLAUDE.md).
 
-## Expanding the Oxlint configuration
+## Menjalankan proyek
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev        # server pengembangan
+npm run build       # type-check (tsc -b) + build produksi
+npm run lint         # oxlint
+npm run preview      # pratinjau hasil build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Status
+
+Fase 1–4 (lihat peta fitur di [`Docs/PRD-Portofolio-Interaktif.md`](./Docs/PRD-Portofolio-Interaktif.md))
+sudah selesai dibangun secara fungsional. Yang masih tersisa sebelum tayang: konten &
+data asli (identitas, proyek, harga, kanal kontak — semua masih placeholder), SEO dasar,
+dan deployment. Riwayat keputusan dan prompt lanjutan tiap fase ada di
+[`Docs/HANDOFF.md`](./Docs/HANDOFF.md) dan berkas `Docs/HANDOFF-FASE*.md`.
