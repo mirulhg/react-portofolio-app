@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portofolio Interaktif</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
+      Situs ini SPA React murni (client-render, tanpa SSR/prerendering) — tanpa JavaScript,
+      #root di atas kosong total. Blok noscript ini HANYA pemenuhan sebagian dari kriteria
+      "konten tetap terbaca bila JS gagal": info minimal + kontak statis, bukan seluruh situs.
+      Pemenuhan penuh butuh migrasi ke framework SSR/prerendering (mis. Next.js, Astro, atau
+      plugin SSG Vite) — perubahan arsitektur besar, di luar cakupan.
+    -->
+    <noscript>
+      <div class="mx-auto flex max-w-content flex-col gap-4 px-section-px py-section-py text-ink">
+        <h1 class="font-heading text-h2 font-semibold">Nama Anda — Front-End Engineer</h1>
+        <p class="text-body text-ink-muted">
+          Situs ini memakai JavaScript untuk galeri proyek, filter, dan formulir interaktif. Tanpa
+          JavaScript, hubungi saya langsung lewat salah satu kanal berikut.
+        </p>
+        <ul class="flex flex-col gap-2 text-body">
+          <li>Surel: <a href="mailto:halo@contoh-email.com" class="text-focus underline">halo@contoh-email.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/6281200000000" class="text-focus underline">+62 812-0000-0000</a></li>
+          <li>
+            LinkedIn:
+            <a href="https://linkedin.com/in/nama-anda" class="text-focus underline">linkedin.com/in/nama-anda</a>
+          </li>
+        </ul>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

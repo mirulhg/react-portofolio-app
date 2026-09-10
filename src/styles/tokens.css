@@ -1,0 +1,70 @@
+:root {
+  /* Warna */
+  --bg-base: #1a1030;
+  --bg-alt: #1e1836;
+  --bg-raised: #241844;
+  --bg-inset: #2e1f55;
+  --ink: #f4eeff;
+  --ink-muted: #a99bc7;
+  --ink-faint: #c6b9e0;
+  --accent-a: #ff3e8a;
+  --accent-b: #ff7a29;
+  --accent-c: #ffc64d;
+  --focus: #2ed9d0;
+  --ok: #3ee08f;
+  --ok-ink: #8ff0bf;
+  --danger: #ff4d5e;
+  --danger-ink: #ff8e97;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --header-bg: rgba(26, 16, 48, 0.82);
+
+  --grad-accent: linear-gradient(135deg, var(--accent-a), var(--accent-b));
+
+  /* Tipografi */
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, Menlo, monospace;
+
+  --fs-hero: clamp(38px, 8.4vw, 84px);
+  --fs-h2: clamp(26px, 5vw, 42px);
+  --fs-h3: 19px;
+  --fs-body: 16.5px;
+  --fs-body-sm: 14.5px;
+  --fs-label: 11.5px;
+
+  /* Spasi */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 40px;
+  --space-9: 56px;
+
+  --content-max: 1200px;
+  --section-py: clamp(64px, 10vw, 120px);
+  --section-px: 24px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+
+  /* Gerakan */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

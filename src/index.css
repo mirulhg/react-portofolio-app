@@ -1,0 +1,32 @@
+@import "./styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.72;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Gradient text dengan fallback warna solid: -webkit-text-fill-color diabaikan
+   oleh mesin yang tidak mendukungnya, jadi `color` di bawah tetap jadi cadangan. */
+.text-gradient-hero {
+  color: var(--accent-a);
+  background: var(--grad-accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
