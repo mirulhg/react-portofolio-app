@@ -1,19 +1,19 @@
-// Placeholder — kisah, keahlian, dan prinsip kerja belum konten asli, ganti sebelum tayang
-// (pola sama seperti Hero.tsx, HANDOFF §7.2).
 const KISAH_SINGKAT =
-  "Saya front-end engineer yang fokus membangun situs dan dasbor yang benar-benar dipakai, " +
-  "bukan sekadar terlihat bagus di demo. Perjalanan saya dimulai dari proyek kecil untuk usaha " +
-  "teman dan keluarga, lalu berkembang ke produk dengan pengguna nyata yang butuh performa dan " +
-  "aksesibilitas serius. Saya percaya kode yang baik itu membosankan — mudah dibaca, mudah " +
-  "diubah, dan tidak menyimpan kejutan. Setiap proyek saya perlakukan seolah saya sendiri yang " +
-  "akan merawatnya setahun ke depan. Di luar coding, saya suka membaca dokumentasi sampai detail " +
-  "kecil dan menguji situs saya sendiri pakai keyboard saja untuk memastikan semua orang bisa " +
-  "memakainya.";
+  "Saya Amirul, frontend engineer yang juga menyebut diri vibe coder — masuk ke masalah lewat " +
+  "eksperimen yang terukur, bukan cuma ikut resep. Asal Sanggau, Kalimantan Barat, sekarang " +
+  "menetap di Yogyakarta dan terbuka bekerja remote dari mana saja. Saya membangun situs dan " +
+  "dasbor yang benar-benar dipakai, bukan sekadar terlihat bagus di demo — performa dan " +
+  "aksesibilitas jadi bagian dari definisi selesai, bukan tambahan di akhir. Di luar layar kode, " +
+  "saya menghabiskan waktu main game dan main bola; keduanya mengajarkan hal yang sama: baca " +
+  "situasi cepat, ambil keputusan, lalu evaluasi hasilnya. Prinsip itu saya bawa ke cara saya " +
+  "bekerja dengan klien — komunikasi jujur soal kendala, revisi yang terukur, dan hasil yang " +
+  "bisa dipertanggungjawabkan setahun ke depan.";
 
 const KELOMPOK_KEAHLIAN = [
   { kelompok: "Front-End", item: ["React", "TypeScript", "Tailwind CSS", "Aksesibilitas (WCAG)"] },
   { kelompok: "Alat & Alur Kerja", item: ["Vite", "Git", "Figma-ke-kode", "Playwright"] },
   { kelompok: "Kolaborasi", item: ["Menerjemahkan kebutuhan klien", "Dokumentasi serah-terima", "Revisi terukur"] },
+  { kelompok: "Keahlian Lain", item: ["Unity", "DaVinci Resolve"] },
 ] as const;
 
 const PRINSIP_KERJA = [
@@ -31,7 +31,7 @@ export function TentangSection() {
 
         <p className="max-w-[65ch] text-body text-ink-muted">{KISAH_SINGKAT}</p>
 
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {KELOMPOK_KEAHLIAN.map((kelompok) => (
             <div key={kelompok.kelompok} className="flex flex-col gap-3">
               <h3 className="text-label uppercase text-ink-faint">{kelompok.kelompok}</h3>

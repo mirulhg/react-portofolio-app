@@ -1,13 +1,11 @@
 import { Button } from "../../shared/ui/Button";
 import { useRevealOnce } from "../../shared/hooks/useRevealOnce";
 import { KapasitasBadge } from "./KapasitasBadge";
+import avatarAmirul from "./avatar-amirul.webp";
 
-// Placeholder — identitas, peran, dan kapasitas belum jadi keputusan final,
-// ganti sebelum tayang (HANDOFF §7.2).
 const SLOT_TERSEDIA = 2;
-const NAMA = "Nama Anda";
-const PERAN = "Front-End Engineer";
-const INISIAL = "NA";
+const NAMA = "Amirul Muwahiddin Noor";
+const PERAN = "Frontend Engineer / Vibe Coder";
 
 export function Hero() {
   const { ref, isRevealed } = useRevealOnce<HTMLDivElement>();
@@ -33,12 +31,13 @@ export function Hero() {
         }`}
       >
         <div className="flex items-center gap-3">
-          <span
-            aria-hidden="true"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-pill bg-bg-inset font-heading text-body-sm font-semibold text-ink-faint"
-          >
-            {INISIAL}
-          </span>
+          <img
+            src={avatarAmirul}
+            alt=""
+            width={44}
+            height={44}
+            className="h-11 w-11 shrink-0 rounded-pill object-cover"
+          />
           <div>
             <p className="font-heading text-body font-semibold text-ink">
               {NAMA}
