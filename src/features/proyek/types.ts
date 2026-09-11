@@ -19,6 +19,9 @@ export const proyekSchema = z.object({
   hasil: z.string().min(1),
   tautan: z.string().url().nullable(),
   anonim: z.boolean().default(false),
+  // Proyek inisiatif sendiri (bukan pesanan klien) — ditandai jujur di kartu & detail,
+  // bukan disembunyikan atau dibaurkan seolah proyek klien (kesepakatan Amirul).
+  mandiri: z.boolean().default(false),
 });
 
 export type Proyek = z.infer<typeof proyekSchema>;

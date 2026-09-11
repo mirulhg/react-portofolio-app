@@ -49,6 +49,11 @@ export function KartuProyek({ proyek }: KartuProyekProps) {
               NDA
             </span>
           )}
+          {proyek.mandiri && (
+            <span className="rounded-pill border border-line-strong px-2 py-0.5 font-mono text-label text-ink-muted">
+              Proyek Mandiri
+            </span>
+          )}
         </div>
         <h3 className="font-heading text-h3 font-semibold text-ink">{proyek.title}</h3>
         <p className="text-body-sm text-ink-muted">{proyek.blurb}</p>

@@ -35,6 +35,11 @@ export function ProyekDetail(props: ProyekDetailProps) {
             NDA
           </span>
         )}
+        {proyek.mandiri && (
+          <span className="rounded-pill border border-line-strong px-2 py-0.5 font-mono text-label text-ink-muted">
+            Proyek Mandiri
+          </span>
+        )}
       </div>
 
       <h2 id="detail-proyek-judul" className="font-heading text-h2 font-semibold text-ink">

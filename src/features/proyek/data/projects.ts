@@ -22,6 +22,7 @@ const PROYEK_MENTAH: Proyek[] = [
     hasil: "Pesanan tercatat otomatis, waktu proses order turun dari ~15 menit ke di bawah 2 menit.",
     tautan: "https://example.com/toko-kopi-nusantara",
     anonim: false,
+    mandiri: false,
   },
   {
     slug: "klien-a-butik",
@@ -35,6 +36,7 @@ const PROYEK_MENTAH: Proyek[] = [
     hasil: "Tingkat retur karena salah ukuran turun signifikan setelah filter diperjelas.",
     tautan: "https://example.com/klien-a-butik",
     anonim: true,
+    mandiri: false,
   },
   {
     slug: "profil-studio-ares",
@@ -48,6 +50,7 @@ const PROYEK_MENTAH: Proyek[] = [
     hasil: "Permintaan konsultasi via formulir jadi kanal masuk kedua terbesar setelah rujukan.",
     tautan: "https://example.com/profil-studio-ares",
     anonim: false,
+    mandiri: false,
   },
   {
     slug: "dasbor-operasional-gudang",
@@ -61,6 +64,7 @@ const PROYEK_MENTAH: Proyek[] = [
     hasil: "Waktu deteksi stok menipis turun dari harian jadi real-time.",
     tautan: "https://example.com/dasbor-operasional-gudang",
     anonim: false,
+    mandiri: false,
   },
   {
     slug: "dasbor-keuangan-internal",
@@ -74,6 +78,7 @@ const PROYEK_MENTAH: Proyek[] = [
     hasil: "Proyek internal, situs sudah tidak dioperasikan lagi setelah kontrak selesai.",
     tautan: null,
     anonim: false,
+    mandiri: false,
   },
   {
     slug: "landing-page-tabungan-digital",
@@ -87,6 +92,7 @@ const PROYEK_MENTAH: Proyek[] = [
     hasil: "Halaman termuat di bawah 1,5 detik di seluler, jadi rujukan utama kampanye iklan.",
     tautan: "https://example.com/landing-tabungan-digital",
     anonim: false,
+    mandiri: false,
   },
 ];
 
