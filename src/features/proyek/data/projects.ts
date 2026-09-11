@@ -94,6 +94,35 @@ const PROYEK_MENTAH: Proyek[] = [
     anonim: false,
     mandiri: false,
   },
+  {
+    slug: "pelacak-langganan-digital",
+    title: "Pelacak Langganan Digital",
+    category: "Dasbor",
+    blurb: "Aplikasi pencatat & penghitung biaya langganan digital, konversi mata uang & tanggal tagih otomatis.",
+    sampul: null,
+    masalah:
+      "Biaya langganan digital terfragmentasi ke banyak transaksi kecil, penagihannya pasif/otomatis " +
+      "jadi jarang dievaluasi, dan satuannya tidak seragam (bulanan vs tahunan, macam-macam mata uang) " +
+      "— sehingga total pengeluaran sulit disadari pemiliknya sendiri.",
+    peran:
+      "Merancang & membangun sendiri dari nol: model data, algoritma tanggal penagihan berulang " +
+      "(termasuk kasus akhir bulan & tahun kabisat), normalisasi biaya lintas siklus & mata uang, " +
+      "integrasi API kurs eksternal, sampai pengujian unit.",
+    proses: [
+      { no: "01", teks: "Rancang model data & algoritma sebelum menulis UI." },
+      { no: "02", teks: "Bangun inti minimal: tambah/ubah/hapus/arsip, total bulanan-tahunan, simpan lokal." },
+      { no: "03", teks: "Tambah penyaringan & pengurutan, status tersimpan di URL." },
+      { no: "04", teks: "Integrasikan konversi mata uang dengan keadaan async lengkap (memuat/gagal/kosong/berhasil)." },
+      { no: "05", teks: "Tambah penanda \"segera ditagih\", ekspor/impor JSON, audit aksesibilitas WCAG 2.1 AA." },
+    ],
+    hasil:
+      "Lima tahap pengembangan selesai, 12 kebutuhan fungsional terpenuhi, logika perhitungan diuji " +
+      "unit (fungsi murni tanpa dependency React), dan audit aksesibilitas menemukan + memperbaiki " +
+      "satu isu nyata (animasi tidak menghormati prefers-reduced-motion).",
+    tautan: "https://subscribe-tracker.netlify.app/",
+    anonim: false,
+    mandiri: true,
+  },
 ];
 
 export const projects: Proyek[] = PROYEK_MENTAH.map((proyek) => proyekSchema.parse(proyek));
