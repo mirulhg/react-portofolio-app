@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { projects } from "./data/projects";
+import { useProjects } from "./data/useProjects";
 import { FilterKategori } from "./FilterKategori";
 import { KartuProyek } from "./KartuProyek";
 import { getKategoriAktif } from "./types";
@@ -7,6 +7,7 @@ import { getKategoriAktif } from "./types";
 export function ProyekSection() {
   const [searchParams, setSearchParams] = useSearchParams();
   const kategoriAktif = getKategoriAktif(searchParams);
+  const { data: projects, loading, error } = useProjects();
 
   const proyekTersaring =
     kategoriAktif === "Semua" ? projects : projects.filter((proyek) => proyek.category === kategoriAktif);
@@ -25,7 +26,13 @@ export function ProyekSection() {
           <FilterKategori />
         </div>
 
-        {proyekTersaring.length === 0 ? (
+        {loading ? (
+          <p className="text-body text-ink-muted">Memuat proyek…</p>
+        ) : error ? (
+          <div className="flex flex-col items-start gap-4 rounded-lg border border-line bg-bg-raised p-8">
+            <p className="text-body text-ink-muted">Gagal memuat data proyek: {error}</p>
+          </div>
+        ) : proyekTersaring.length === 0 ? (
           <div className="flex flex-col items-start gap-4 rounded-lg border border-line bg-bg-raised p-8">
             <p className="text-body text-ink-muted">
               Belum ada proyek di kategori &ldquo;{kategoriAktif}&rdquo;. Kategori ini memang belum terisi saat

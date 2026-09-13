@@ -28,6 +28,9 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       # SPA fallback: GitHub Pages tidak punya rewrite server-side, jadi refresh
       # di rute seperti /proyek/:slug akan dilayani lewat 404.html ini, lalu

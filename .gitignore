@@ -26,3 +26,7 @@ dist-ssr
 .claude/settings.local.json
 # Hasil generate (dibuat ulang saat build, lihat scripts/generate-sitemap.mjs)
 public/sitemap.xml
+
+# Env lokal (jangan commit)
+.env
+.env.local
