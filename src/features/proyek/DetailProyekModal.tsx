@@ -1,11 +1,14 @@
 import { useRef } from "react";
 import { useDialogA11y } from "../../shared/hooks/useDialogA11y";
 import { useDialogTransition } from "../../shared/hooks/useDialogTransition";
+import { ProyekTidakDitemukan } from "./ProyekTidakDitemukan";
 import type { Proyek } from "./types";
 
 type ProyekDetailProps =
   | { proyek: Proyek; presentation: "page" }
-  | { proyek: Proyek; presentation: "modal"; onClose: () => void };
+  // `proyek` boleh null di modal: slug yang tidak cocok (tautan lama/typo) tetap
+  // membuka modal berisi pesan "tidak ditemukan", bukan diam-diam menutup.
+  | { proyek: Proyek | null; presentation: "modal"; onClose: () => void };
 
 const SAMPUL_PLACEHOLDER_CLASS =
   "bg-[repeating-linear-gradient(135deg,var(--line-strong)_0px,var(--line-strong)_1px,transparent_1px,transparent_12px)]";
@@ -24,7 +27,9 @@ export function ProyekDetail(props: ProyekDetailProps) {
 
   useDialogA11y(panelRef, isModal, requestClose);
 
-  const konten = (
+  const konten = !proyek ? (
+    <ProyekTidakDitemukan />
+  ) : (
     <div className="flex flex-col gap-6">
       <div aria-hidden="true" className={`h-[220px] w-full rounded-lg ${SAMPUL_PLACEHOLDER_CLASS}`} />
 

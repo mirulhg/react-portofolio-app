@@ -8,7 +8,12 @@ export function ProyekDetailModalRoute() {
   const { data: projects, loading } = useProjects();
   const proyek = projects.find((item) => item.slug === slug);
 
-  if (loading || !proyek) return null;
+  // Beda dari sekadar "belum ada data": kalau masih loading, jangan tampilkan apa-apa
+  // dulu (modal kosong sekejap terasa lebih wajar daripada kedip pesan "tidak
+  // ditemukan" yang salah). Begitu selesai loading dan proyek tetap tidak ketemu
+  // (slug salah/tautan lama), modal tetap dibuka dengan pesan yang jelas — bukan
+  // diam-diam menutup tanpa penjelasan.
+  if (loading) return null;
 
-  return <ProyekDetail proyek={proyek} presentation="modal" onClose={() => navigate(-1)} />;
+  return <ProyekDetail proyek={proyek ?? null} presentation="modal" onClose={() => navigate(-1)} />;
 }
