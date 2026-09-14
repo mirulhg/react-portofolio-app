@@ -8,13 +8,14 @@ interface Kanal {
 // features/beranda/Hero.tsx).
 const KANAL: Kanal[] = [
   { label: "Surel", nilai: "halo@contoh-email.com", href: "mailto:halo@contoh-email.com" },
-  { label: "WhatsApp", nilai: "+62 812-0000-0000", href: "https://wa.me/6281200000000" },
+  // WhatsApp sengaja disembunyikan dulu (belum siap ditampilkan). Tambahkan kembali ke
+  // array ini saat sudah siap: { label: "WhatsApp", nilai: "...", href: "https://wa.me/..." }.
   { label: "LinkedIn", nilai: "linkedin.com/in/nama-anda", href: "https://linkedin.com/in/nama-anda" },
 ];
 
 export function KartuKanalKontak() {
   return (
-    <div className="grid gap-4 sm:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2">
       {KANAL.map((kanal) => (
         <a
           key={kanal.label}
