@@ -1,6 +1,7 @@
 import { Button } from "../../shared/ui/Button";
 import { useRevealOnce } from "../../shared/hooks/useRevealOnce";
 import { KapasitasBadge } from "./KapasitasBadge";
+import { PreviewBerjalan } from "../berjalan";
 import avatarAmirul from "./avatar-amirul.webp";
 
 const SLOT_TERSEDIA = 2;
@@ -26,43 +27,52 @@ export function Hero() {
 
       <div
         ref={ref}
-        className={`relative mx-auto flex max-w-content flex-col items-start gap-6 transition-[opacity,transform] duration-[320ms] ease-out ${
+        className={`relative mx-auto flex max-w-content flex-col gap-10 transition-[opacity,transform] duration-[320ms] ease-out lg:flex-row lg:items-start lg:justify-between ${
           isRevealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
         }`}
       >
-        <div className="flex items-center gap-3">
-          <img
-            src={avatarAmirul}
-            alt=""
-            width={44}
-            height={44}
-            className="h-11 w-11 shrink-0 rounded-pill object-cover"
-          />
-          <div>
-            <p className="font-heading text-body font-semibold text-ink">
-              {NAMA}
-            </p>
-            <p className="text-body-sm text-ink-muted">{PERAN}</p>
+        <div className="flex flex-col items-start gap-6">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-3">
+              <img
+                src={avatarAmirul}
+                alt=""
+                width={44}
+                height={44}
+                className="h-11 w-11 shrink-0 rounded-pill object-cover"
+              />
+              <div>
+                <p className="font-heading text-body font-semibold text-ink">
+                  {NAMA}
+                </p>
+                <p className="text-body-sm text-ink-muted">{PERAN}</p>
+              </div>
+            </div>
+            <Button to="/profil" variant="ghost">
+              Detail Profil
+            </Button>
+          </div>
+
+          <KapasitasBadge slotTersedia={SLOT_TERSEDIA} />
+
+          <h1 className="text-gradient-hero font-heading text-hero font-semibold">
+            Produk digital untuk klien.
+          </h1>
+
+          <p className="max-w-[46ch] text-body text-ink-muted">
+            Situs dan dasbor yang cepat, mudah diakses, dan enak dipakai — dari
+            ide sampai rilis.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button href="#proyek">Lihat hasil kerja</Button>
+            <Button href="#kontak" variant="ghost">
+              Mulai proyek
+            </Button>
           </div>
         </div>
 
-        <KapasitasBadge slotTersedia={SLOT_TERSEDIA} />
-
-        <h1 className="text-gradient-hero font-heading text-hero font-semibold">
-          Produk digital untuk klien.
-        </h1>
-
-        <p className="max-w-[46ch] text-body text-ink-muted">
-          Situs dan dasbor yang cepat, mudah diakses, dan enak dipakai — dari
-          ide sampai rilis.
-        </p>
-
-        <div className="flex flex-wrap gap-4">
-          <Button href="#proyek">Lihat hasil kerja</Button>
-          <Button href="#kontak" variant="ghost">
-            Mulai proyek
-          </Button>
-        </div>
+        <PreviewBerjalan />
       </div>
     </section>
   );

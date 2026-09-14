@@ -3,6 +3,7 @@ import { SiteHeader } from "./app/layout/SiteHeader";
 import { SiteFooter } from "./app/layout/SiteFooter";
 import { HomePage } from "./app/HomePage";
 import { ProyekDetailPage, ProyekDetailModalRoute } from "./features/proyek";
+import { ProfilPage } from "./features/profil";
 
 interface NavigationState {
   backgroundLocation?: Location;
@@ -17,6 +18,7 @@ export function App() {
       <SiteHeader />
       <Routes location={backgroundLocation ?? location}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/profil" element={<ProfilPage />} />
         <Route path="/proyek/:slug" element={<ProyekDetailPage />} />
       </Routes>
       {backgroundLocation && (
