@@ -3,31 +3,30 @@ import { rupiah } from "../../shared/lib/format";
 interface PaketHarga {
   nama: string;
   deskripsi: string;
-  harga: { min: number; max: number } | { perHari: number };
+  harga: { min: number; max: number } | { perHariMin: number; perHariMax: number };
 }
 
-// Placeholder — angka karangan yang masuk akal, ganti sebelum tayang (HANDOFF §7.2).
 const PAKET_HARGA: PaketHarga[] = [
   {
     nama: "Landing Page / Situs Profil",
     deskripsi: "Satu halaman atau situs profil ringkas, siap rilis.",
-    harga: { min: 2_500_000, max: 5_000_000 },
+    harga: { min: 1_000_000, max: 4_000_000 },
   },
   {
     nama: "Toko Online / Dasbor",
     deskripsi: "Proyek dengan alur data, autentikasi, atau checkout.",
-    harga: { min: 6_000_000, max: 12_000_000 },
+    harga: { min: 6_000_000, max: 20_000_000 },
   },
   {
     nama: "Kerja lepas harian",
     deskripsi: "Bergabung sementara di tim yang sudah berjalan.",
-    harga: { perHari: 600_000 },
+    harga: { perHariMin: 500_000, perHariMax: 750_000 },
   },
 ];
 
 function formatHarga(harga: PaketHarga["harga"]): string {
-  if ("perHari" in harga) {
-    return `${rupiah(harga.perHari)} / hari`;
+  if ("perHariMin" in harga) {
+    return `${rupiah(harga.perHariMin)}–${rupiah(harga.perHariMax)} / hari`;
   }
   return `${rupiah(harga.min)}–${rupiah(harga.max)}`;
 }
