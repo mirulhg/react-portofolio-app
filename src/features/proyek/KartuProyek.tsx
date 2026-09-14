@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useRevealOnce } from "../../shared/hooks/useRevealOnce";
+import { SampulProyek } from "./SampulProyek";
 import type { Proyek } from "./types";
 
 interface KartuProyekProps {
@@ -25,21 +26,7 @@ export function KartuProyek({ proyek }: KartuProyekProps) {
       }`}
     >
       <div className="relative h-[176px] w-full overflow-hidden bg-bg-inset">
-        {proyek.sampul ? (
-          <img
-            src={proyek.sampul.src}
-            alt={proyek.sampul.alt}
-            width={300}
-            height={176}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <div
-            aria-hidden="true"
-            className="h-full w-full bg-[repeating-linear-gradient(135deg,var(--line-strong)_0px,var(--line-strong)_1px,transparent_1px,transparent_12px)]"
-          />
-        )}
+        <SampulProyek sampul={proyek.sampul} className="h-full w-full" />
       </div>
       <div className="flex flex-col gap-2 p-5">
         <div className="flex items-center gap-2">

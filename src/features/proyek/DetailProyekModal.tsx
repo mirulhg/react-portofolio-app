@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useDialogA11y } from "../../shared/hooks/useDialogA11y";
 import { useDialogTransition } from "../../shared/hooks/useDialogTransition";
 import { ProyekTidakDitemukan } from "./ProyekTidakDitemukan";
+import { SampulProyek } from "./SampulProyek";
 import type { Proyek } from "./types";
 
 type ProyekDetailProps =
@@ -9,9 +10,6 @@ type ProyekDetailProps =
   // `proyek` boleh null di modal: slug yang tidak cocok (tautan lama/typo) tetap
   // membuka modal berisi pesan "tidak ditemukan", bukan diam-diam menutup.
   | { proyek: Proyek | null; presentation: "modal"; onClose: () => void };
-
-const SAMPUL_PLACEHOLDER_CLASS =
-  "bg-[repeating-linear-gradient(135deg,var(--line-strong)_0px,var(--line-strong)_1px,transparent_1px,transparent_12px)]";
 
 // Durasi transisi masuk/keluar modal (HANDOFF §1 "Modal masuk": 280ms). Dipakai juga sebagai
 // jeda sebelum benar-benar menutup (navigate), supaya animasi keluar sempat diputar penuh
@@ -31,7 +29,7 @@ export function ProyekDetail(props: ProyekDetailProps) {
     <ProyekTidakDitemukan />
   ) : (
     <div className="flex flex-col gap-6">
-      <div aria-hidden="true" className={`h-[220px] w-full rounded-lg ${SAMPUL_PLACEHOLDER_CLASS}`} />
+      <SampulProyek sampul={proyek.sampul} className="h-[220px] w-full rounded-lg" />
 
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-label uppercase text-ink-faint">{proyek.category}</span>
