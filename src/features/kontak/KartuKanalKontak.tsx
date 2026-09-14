@@ -4,13 +4,15 @@ interface Kanal {
   href: string;
 }
 
-// Placeholder — ganti dengan kontak asli sebelum tayang (pola sama seperti "Nama Anda" di
-// features/beranda/Hero.tsx).
 const KANAL: Kanal[] = [
-  { label: "Surel", nilai: "halo@contoh-email.com", href: "mailto:halo@contoh-email.com" },
+  { label: "Surel", nilai: "dev.myrules@gmail.com", href: "mailto:dev.myrules@gmail.com" },
   // WhatsApp sengaja disembunyikan dulu (belum siap ditampilkan). Tambahkan kembali ke
   // array ini saat sudah siap: { label: "WhatsApp", nilai: "...", href: "https://wa.me/..." }.
-  { label: "LinkedIn", nilai: "linkedin.com/in/nama-anda", href: "https://linkedin.com/in/nama-anda" },
+  {
+    label: "LinkedIn",
+    nilai: "linkedin.com/in/amirulmuwahiddin-noor",
+    href: "https://www.linkedin.com/in/amirulmuwahiddin-noor-8a2116151/",
+  },
 ];
 
 export function KartuKanalKontak() {
