@@ -102,3 +102,22 @@ Kemungkinan besar:
 - Ada baris dengan data yang tidak valid (mis. `category` typo, `proses`
   bukan JSON array yang benar) — cek Table Editor, `proyekSchema` di
   `src/features/proyek/types.ts` akan menolak baris yang bentuknya salah.
+
+## 8. Upload gambar (sampul proyek)
+
+Kolom `sampul` di tabel `projects` cuma menyimpan LINK gambar (`{"src": "...", "alt": "..."}`),
+bukan file itu sendiri. Supaya bisa upload file gambar dari komputer, pakai
+**Supabase Storage** (bucket `project-images`, sudah dibuat & di-set publik):
+
+1. Dashboard Supabase → **Storage** → **Files** → bucket `project-images`.
+2. **Upload file** → pilih gambar dari komputer (maks 50MB).
+3. Klik file yang sudah terupload → **Copy URL** (link publiknya).
+4. Table Editor → tabel `projects` → edit baris proyek → isi kolom `sampul`:
+   ```json
+   {"src": "<link yang dicopy>", "alt": "deskripsi singkat gambar"}
+   ```
+5. Save. Gambar langsung tampil di kartu proyek di situs (reload halaman).
+
+Bucket ini publik untuk BACA saja (siapa pun bisa lihat gambarnya lewat link),
+tapi upload/hapus file cuma bisa lewat dashboard Supabase yang sudah login
+sebagai kamu — bukan lewat situs publik.
