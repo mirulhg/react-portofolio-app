@@ -1,4 +1,5 @@
 import { useRevealOnce } from "../../shared/hooks/useRevealOnce";
+import { useCountUp } from "../../shared/hooks/useCountUp";
 
 interface BatangKemajuanProps {
   persen: number;
@@ -30,6 +31,7 @@ function IkonSinkron({ berputar }: { berputar: boolean }) {
 
 export function BatangKemajuan({ persen, namaProyek, isBasi }: BatangKemajuanProps) {
   const { ref, isRevealed } = useRevealOnce<HTMLDivElement>();
+  const persenAnimasi = useCountUp(persen, isRevealed);
 
   return (
     <div ref={ref} className="flex flex-col gap-2">
@@ -52,7 +54,7 @@ export function BatangKemajuan({ persen, namaProyek, isBasi }: BatangKemajuanPro
         <IkonSinkron berputar={!isBasi} />
       </div>
       <div className="flex items-center justify-between text-body-sm text-ink-muted">
-        <span className="tabular-nums">{persen}%</span>
+        <span className="tabular-nums">{persenAnimasi}%</span>
         {isBasi && <span>belum diperbarui</span>}
       </div>
     </div>
