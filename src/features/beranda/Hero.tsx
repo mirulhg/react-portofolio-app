@@ -2,6 +2,7 @@ import { Button } from "../../shared/ui/Button";
 import { useRevealOnce } from "../../shared/hooks/useRevealOnce";
 import { KapasitasBadge } from "./KapasitasBadge";
 import { PreviewBerjalan } from "../berjalan";
+import { PreviewProjectZero } from "../projectzero";
 import avatarAmirul from "./avatar-amirul.webp";
 
 const SLOT_TERSEDIA = 2;
@@ -72,7 +73,10 @@ export function Hero() {
           </div>
         </div>
 
-        <PreviewBerjalan />
+        <div className="flex w-full flex-col gap-6 lg:max-w-[300px]">
+          <PreviewBerjalan />
+          <PreviewProjectZero />
+        </div>
       </div>
     </section>
   );

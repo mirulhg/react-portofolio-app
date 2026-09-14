@@ -19,7 +19,7 @@ export function PreviewBerjalan() {
   return (
     <a
       href="#berjalan"
-      className="flex w-full flex-col gap-4 rounded-lg border border-line bg-bg-raised p-5 transition-transform duration-[170ms] ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] lg:max-w-[300px]"
+      className="flex w-full flex-col gap-4 rounded-lg border border-line bg-bg-raised p-5 transition-transform duration-[170ms] ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97]"
     >
       <p className="text-label uppercase text-ink-faint">Sedang Berjalan</p>
       <div className="flex flex-col gap-4">
