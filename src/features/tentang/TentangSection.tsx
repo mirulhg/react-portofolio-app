@@ -1,3 +1,5 @@
+import { LogoKeahlian } from "./LogoKeahlian";
+
 const KISAH_SINGKAT =
   "Saya Amirul, frontend engineer yang juga menyebut diri vibe coder — masuk ke masalah lewat " +
   "eksperimen yang terukur, bukan cuma ikut resep. Asal Sanggau, Kalimantan Barat, sekarang " +
@@ -37,7 +39,8 @@ export function TentangSection() {
               <h3 className="text-label uppercase text-ink-faint">{kelompok.kelompok}</h3>
               <ul className="flex flex-col gap-2">
                 {kelompok.item.map((item) => (
-                  <li key={item} className="text-body-sm text-ink">
+                  <li key={item} className="flex items-center gap-2 text-body-sm text-ink">
+                    <LogoKeahlian nama={item} className="h-4 w-4 shrink-0 text-ink-faint" />
                     {item}
                   </li>
                 ))}
