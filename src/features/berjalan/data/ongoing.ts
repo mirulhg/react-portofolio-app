@@ -10,8 +10,8 @@ const PROYEK_BERJALAN_MENTAH: ProyekBerjalan[] = [
     tahap: [
       { label: "Riset & lingkup", status: "selesai" },
       { label: "Desain", status: "selesai" },
-      { label: "Pengembangan", status: "selesai" },
-      { label: "Rilis", status: "jalan" },
+      { label: "Pengembangan", status: "jalan" },
+      { label: "Rilis", status: "belum" },
     ],
     diperbarui: "2026-09-24",
   },
